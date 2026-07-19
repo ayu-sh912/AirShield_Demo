@@ -7,46 +7,46 @@ interface PricingCardProps {
 const PricingCard = ({ plan }: PricingCardProps) => {
   return (
     <article
-      className={`rounded-[28px] border p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${
+      className={`rounded-[16px] border p-[32px] transition-all duration-300 hover:-translate-y-[4px] hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] ${
         plan.highlighted
-          ? "border-blue-500 bg-gradient-to-br from-blue-600 to-indigo-700 text-white"
-          : "border-slate-200 bg-white text-slate-900"
+          ? "border-[#3563E9] bg-gradient-to-br from-[#3563E9] to-[#2850C8] text-white"
+          : "border-[#F3F4F6] bg-white text-[#111827]"
       }`}
     >
       <div className="flex items-center justify-between gap-3">
-        <h3 className="text-xl font-semibold">{plan.name}</h3>
+        <h3 className="text-[18px] font-[700]">{plan.name}</h3>
         {plan.highlighted && (
-          <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
+          <span className="rounded-full bg-white/20 px-[10px] py-[6px] text-[12px] font-semibold">
             Best value
           </span>
         )}
       </div>
 
-      <p className={`mt-3 text-sm leading-7 ${plan.highlighted ? "text-blue-50" : "text-slate-600"}`}>
+      <p className={`mt-3 text-[14px] leading-[1.65] ${plan.highlighted ? "text-blue-50" : "text-[#6B7280]"}`}>
         {plan.description}
       </p>
 
-      <div className="mt-6 flex items-end gap-1">
-        <span className="text-4xl font-semibold">{plan.price}</span>
-        <span className={`text-sm ${plan.highlighted ? "text-blue-100" : "text-slate-500"}`}>
+      <div className="mt-6 flex items-end gap-[4px]">
+        <span className="text-[32px] font-[700]">{plan.price}</span>
+        <span className={`pb-[2px] text-[14px] ${plan.highlighted ? "text-blue-100" : "text-[#9CA3AF]"}`}>
           {plan.billing}
         </span>
       </div>
 
       <ul className="mt-6 space-y-3">
         {plan.features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2 text-sm">
-            <span className={`mt-1 h-2.5 w-2.5 rounded-full ${plan.highlighted ? "bg-white" : "bg-blue-600"}`} />
+          <li key={feature} className="flex items-start gap-[8px] text-[14px] leading-[1.6]">
+            <span className={`mt-[7px] h-[8px] w-[8px] shrink-0 rounded-full ${plan.highlighted ? "bg-white" : "bg-[#3563E9]"}`} />
             <span>{feature}</span>
           </li>
         ))}
       </ul>
 
       <button
-        className={`mt-8 w-full rounded-full px-4 py-3 text-sm font-semibold transition ${
+        className={`mt-8 w-full rounded-full px-[16px] py-[12px] text-[14px] font-semibold transition ${
           plan.highlighted
-            ? "bg-white text-blue-700 hover:bg-blue-50"
-            : "bg-slate-900 text-white hover:bg-slate-700"
+            ? "bg-white text-[#3563E9] hover:bg-[#F8FAFF]"
+            : "bg-[#111827] text-white hover:bg-[#1F2937]"
         }`}
       >
         {plan.ctaLabel}

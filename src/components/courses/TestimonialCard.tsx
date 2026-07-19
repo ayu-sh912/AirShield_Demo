@@ -6,22 +6,22 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ testimonial }: TestimonialCardProps) => {
   return (
-    <article className="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-      <div className="flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-sm font-semibold text-white">
+    <article className="rounded-[16px] border border-[#F3F4F6] bg-[#F9FAFB] p-[32px]">
+      <div className="flex items-center gap-[16px]">
+        <div className="flex h-[48px] w-[48px] items-center justify-center rounded-full bg-[#3563E9] text-[14px] font-semibold text-white">
           {testimonial.avatar}
         </div>
         <div>
-          <h3 className="font-semibold text-slate-900">{testimonial.name}</h3>
-          <p className="text-sm text-slate-600">
+          <h3 className="text-[16px] font-[700] text-[#111827]">{testimonial.name}</h3>
+          <p className="text-[14px] text-[#6B7280]">
             {testimonial.role} • {testimonial.company}
           </p>
         </div>
       </div>
 
-      <p className="mt-5 text-sm leading-7 text-slate-700">“{testimonial.quote}”</p>
+      <p className="mt-5 text-[14px] leading-[1.7] text-[#6B7280]">“{testimonial.quote}”</p>
 
-      <div className="mt-4 text-sm font-medium text-amber-500" aria-label={`${testimonial.rating} out of 5 stars`}>
+      <div className="mt-4 text-[14px] font-medium text-amber-500" aria-label={`${testimonial.rating} out of 5 stars`}>
         {"★".repeat(testimonial.rating)}
         {"☆".repeat(5 - testimonial.rating)}
       </div>

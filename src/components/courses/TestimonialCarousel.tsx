@@ -17,13 +17,13 @@ const TestimonialCarousel = () => {
 
   return (
     <div className="space-y-4">
-      <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white p-2 shadow-sm">
+      <div className="overflow-hidden rounded-[16px] border border-[#F3F4F6] bg-white p-[8px]">
         <div
           className="flex transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${activeIndex * 100}%)` }}
         >
           {visibleTestimonials.map((testimonial) => (
-            <div key={testimonial.id} className="w-full shrink-0 p-2">
+            <div key={testimonial.id} className="w-full shrink-0 p-[8px]">
               <TestimonialCard testimonial={testimonial} />
             </div>
           ))}
@@ -35,8 +35,8 @@ const TestimonialCarousel = () => {
           <button
             key={testimonial.id}
             type="button"
-            className={`h-2.5 rounded-full transition-all ${
-              index === activeIndex ? "w-8 bg-blue-600" : "w-2.5 bg-slate-300"
+            className={`h-[10px] rounded-full transition-all ${
+              index === activeIndex ? "w-[30px] bg-[#3563E9]" : "w-[10px] bg-[#D1D5DB]"
             }`}
             onClick={() => setActiveIndex(index)}
             aria-label={`Show testimonial ${index + 1}`}
